@@ -4,23 +4,10 @@ public class App {
 	public static Scanner scanner = new Scanner(System.in); 
 
 	public static void main(String[] args) {
-		
-		/*
-		Testes
-
-		Client c1 = new Client("daniel", 30);
-		Client c2 = new Client("Roberto", 20);
-		Client c3 = new Client("pedro", 80);
-		
-		this.manage.addClient(c1);
-		manage.addClient(c2);
-		manage.addClient(c3);
-
-		System.out.println(manage.isEmpty());
-		System.out.println(manage.showQueues()); */
 
 		int op = 0;
 		do {
+
 				System.out.println("******************Bem-vindo*****************");
 				System.out.println("Opções:");
 				System.out.println("1- Chegada do cliente na agência");
@@ -39,6 +26,7 @@ public class App {
 										System.out.println("Chegou um cliente!!");
 										newClient();
 										break;
+
 								case 2:
 												System.out.println("Proximo cliente:\n");
 												if(manage.showNext() != null){
@@ -47,6 +35,7 @@ public class App {
 														System.out.println("Não há clientes.");
 												}
 										break;
+
 								case 3:
 												if(!manage.isEmpty()){
 														if(manage.showNext() != null){
@@ -60,6 +49,7 @@ public class App {
 														System.out.println("Não há ninguém na fila.");
 												}
 										break;
+
 								case 4:
 									 if(manage.showQueues() != null){
 											System.out.println(manage.showQueues());
@@ -67,6 +57,7 @@ public class App {
 												System.out.println("Não há ninguém no momento");
 										}
 										break;
+
 								case 5:
 										if (!manage.isEmpty()) {
 												System.out.println("Encerramento bloqueado, tem cliente na fila!");
@@ -75,9 +66,11 @@ public class App {
 												op = 6;
 										}
 										break;
+
 								default:
 										System.out.println("Opção inválida. Selecione outra opção.");
 										break;
+
 						}
 		} while (op != 6);	
 
@@ -93,7 +86,7 @@ public class App {
 				 System.out.println("Idade do cliente?\n");
 				 age = scanner.nextInt();
 		 }catch(java.util.InputMismatchException e){
-				 System.out.println("Por favor, verifique suas entradas. Atente-se a idade ser apenas em números e nome apenas em letras.");
+				 System.out.println("Por favor, Apenas em números e nome apenas em letras.");
 		 }
 			Client client = new Client(name, age);
 			manage.addClient(client);
